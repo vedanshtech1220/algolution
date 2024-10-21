@@ -1,0 +1,585 @@
+Q 1  COUNT NEGATIVE NUMBER
+
+//count of Negative Numbers in Array
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter size of Array :";
+    cin>>n;
+    
+    int a[n],count=0;
+    
+    cout<<"Enter elements in array :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+    
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]<0) count++;
+    }
+   
+   cout<<"Toatal Negative Numbers is : "<<count; 
+   
+    return 0;
+}
+
+________________________________________________________________________________________________________
+
+question 2 : Maximum element in array
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Size of the array : ";
+    cin>>n;
+    int a[n];
+    int i;
+    int max;
+    
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+    max=a[0];
+
+    for(i=1;i<n;i++)
+    {
+        if(max<=a[i])
+        {
+            max=a[i];
+        }
+    }
+    cout<<"Maximum element : "<<max;
+}
+________________________________________________________________________________________________________
+
+Q 3  MERGE OF 2 SORTED ARRAY
+
+//Merge of 2 sorted array in Third Array
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter size of Both Arrays :";
+    cin>>n;
+    
+    int a[n],b[n];
+    int m = n+n;
+    int c[m];
+    cout<<"Enter elements in array 1 :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+     cout<<"Enter elements in array 2 :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>b[i];
+    }
+    
+    int i=0,j=0,k=0;
+    
+   while(i<n || j<n)
+   {
+       if(a[i]<b[j])
+       {
+           c[k]=a[i];
+           i++,k++;
+       }
+       else 
+       {
+           c[k]=b[j];
+           j++,k++;
+       }
+      
+   }
+   
+   cout<<"Final Sorted "; 
+   for(int k=0;k<m;k++)
+   {
+       cout<<c[k]<<" ";
+   }
+   
+   
+    return 0;
+}
+
+________________________________________________________________________________________________________
+Q 4  REVERSE ARRAY
+
+//count of Negative Numbers in Array
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter size of Array :";
+    cin>>n;
+    
+    int a[n];
+    
+    cout<<"Enter elements in array :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+    //only print in reverse
+    for(int i=n-1;i>=0;i--)
+    {
+        cout<<a[i]<<" ";
+    }
+   
+   // Reverse Position in Array
+   int start=0,end=n-1;
+   while(start<end)
+   {
+       swap(a[start],a[end]);
+       start++,end--;
+   }
+   
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 5  ARRAY IS PALINDROME
+
+//Array is Pallendrome or Not
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter size of Array :";
+    cin>>n;
+    
+    int a[n];
+    
+    cout<<"Enter elements in array :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+   
+   // Check Array is Palindrome or Not
+   int start=0,end=n-1;bool flag=true;
+   while(start<end)
+   {
+       if(a[start] == a[end]) start++,end--;
+       else { flag= false; cout<<"Array is Not Palindrome"; break  ;}
+   }
+   
+  if(flag)
+  cout<<"Array is Palindrome";
+    
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 6   FIRST OCCURENCE
+
+//count of Negative Numbers in Array
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter size of Array :";
+    cin>>n;
+    
+    int a[n];
+    
+    cout<<"Enter elements in array :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+   
+   // Check Array is Palindrome or Not
+   int item;
+   cout<<"Enter the Element for finding ";
+   cin>>item;
+   
+   for(int i=0;i<n;i++)
+   {
+       if(a[i]==item) 
+       {
+           cout<<"First Occurance index is : "<<i;
+           break;
+       }
+   }
+ 
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 7  UNIQUE NUMBER
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void RemoveDuplicates(int arr[], int n)
+{
+
+	int i = 0;
+
+	// Traverse the array
+	while (i < n) {
+
+		int cur = arr[i];
+
+		// Stores frequency of the current element
+		int cnt = 0;
+
+		// Iterate until end of the
+		// array is reached or current
+		// element is not the same as the
+		// previous element
+		while (i < n and cur == arr[i]) {
+			cnt++;
+			i++;
+		}
+
+		// If current element is unique
+		if (cnt == 1) {
+
+			cout << cur << " ";
+		}
+	}
+}
+
+
+int main()
+{	
+	int arr[] = { 1, 3, 3, 5, 5, 6, 10 };
+	int N = 7;	
+	RemoveDuplicates(arr, N);
+	return 0;
+}
+________________________________________________________________________________________________________
+Q 8  FREQUENCY COUNT
+
+//frequency count
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter size of Array :";
+    cin>>n;
+    
+    int a[n];
+    
+   map<int,int>mp;
+
+    cout<<"Enter elements in array :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+     for(int i=0;i<n;i++)
+    {
+        mp[a[i]]++;
+    }
+    
+    
+   for(auto x : mp)
+   {
+       cout<<x.first <<" "<<x.second <<endl;
+   }
+ 
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 9  DUPLICATE NO. IN ARRAY
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+     int n;
+    cout<<"Enter size of Array :";
+    cin>>n;
+    
+    map<int,int> mp;
+    
+    int a[n];
+    
+    cout<<"Enter elements in array :" ;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+
+    for(int i=0;i<n;i++)
+    {
+       mp[a[i]]++;
+    }
+
+    cout<<"Duplicate Number is : ";
+    for(auto x : mp)
+    {
+        if(x.second > 1)
+        {
+            cout<<x.first<<" ";
+        }
+    }
+
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 10  PATTERN PARELLOGRAM
+//Pattern Parallelogram
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   
+   int i,j;
+   
+   for(i=0;i<5;i++)
+   {
+        for(j=0;j<9;j++)
+        {
+         if(i+j < 4   || i+j >8)
+         {
+             cout<<" ";
+         }
+         else
+         {
+             cout<<"*";
+         }
+         
+        }
+        cout<<endl;
+        
+   }
+  
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 11  RIGHT ANGLE TRIANGLE
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i,j;
+    
+    for(i=0;i<5;i++)
+    {  
+        for(j=0;j<5;j++)
+        {
+            if(j<=i)
+            {
+                cout<<"*";
+            }
+            
+        }
+        cout<<endl;
+    }
+    
+    return 0;
+}
+________________________________________________________________________________________________________
+Q12  HALF DIAMOND
+
+//Half Diamond
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i,j;
+    
+    for(i=0;i<5;i++)
+    {  
+        for(j=0;j<5;j++)
+        {
+            if(j<=i)
+            {
+                cout<<"*";
+            }
+        }
+        cout<<endl;
+    }
+    
+    for(i=0;i<5;i++)
+    {  
+        for(j=0;j<5;j++)
+        {
+            if(i+j < 5)
+            {
+                cout<<"*";
+            }
+            
+        }
+        cout<<endl;
+    }
+    
+    
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 13 DIAMOND
+
+// C program to print 
+// diamond shape with 
+// 2n rows
+#include<stdio.h>
+
+// Prints diamond 
+// pattern with 2n rows
+void printDiamond(int n)
+{
+    int space = n - 1;
+
+    // run loop (parent loop)
+    // till number of rows
+    for (int i = 0; i < n; i++)
+    {
+        // loop for initially space, 
+        // before star printing
+        for (int j = 0;j < space; j++)
+            printf(" ");
+
+        // Print i+1 stars
+        for (int j = 0;j <= i; j++)
+            printf("* ");
+
+        printf("\n");
+        space--;
+    }
+
+    // Repeat again in 
+    // reverse order
+    space = 0;
+
+    // run loop (parent loop)
+    // till number of rows
+    for (int i = n; i > 0; i--)
+    {
+        // loop for initially space, 
+        // before star printing
+        for (int j = 0; j < space; j++)
+            printf(" ");
+
+        // Print i stars
+        for (int j = 0;j < i;j++)
+            printf("* ");
+
+        printf("\n");
+        space++;
+    }
+}
+int main()
+{
+    printDiamond(5);
+    return 0;
+}_______________________________________________________________________________________________________
+Q 14 PATTERN
+
+//Pattern
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int i,j;
+
+	int k=1;
+	for(i=1; i<=5; i++)
+	{
+	    cout<<k;
+		for(j=1; j<5; j++)
+		{
+			if(i%2==0)
+				k--;
+			else
+				k++;
+
+			cout<<k;
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+________________________________________________________________________________________________________
+Q 15  PATTERN
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i,j;
+    
+    for(i=1;i<=5;i++)
+    {  
+        for(j=1;j<=5;j++)
+        {
+            if(i==1 || i==5 || j==1 || j==5)
+            {
+                cout<<"1";
+            }
+            else
+            {
+                cout<<"0";
+            }
+        }
+        cout<<endl;
+    }
+    
+    return 0;
+}
+________________________________________________________________________________________________________
+Q 16  PATTERN
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i,j;
+    
+    for(i=1;i<=5;i++)
+    {  int k=i;
+        for(j=1;j<=5;j++)
+        {
+            if(i+j<6)
+           { cout<<k; k++ ;}
+            else cout<<"5";
+        }
+        cout<<endl;
+    }
+    
+    return 0;
+}
+________________________________________________________________________________________________________
+
